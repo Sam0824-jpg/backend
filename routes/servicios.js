@@ -1,16 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const servicioCtrl = require('../controllers/servicioController');
+const servCtrl = require('../controllers/servicioController');
 const verificarToken = require('../middlewares/authMiddleware');
 
-// Rutas CRUD estándar
-router.get('/', verificarToken, servicioCtrl.getAll);
-router.get('/:id', verificarToken, servicioCtrl.getById);
-router.post('/', verificarToken, servicioCtrl.create);
-router.put('/:id', verificarToken, servicioCtrl.update);
-router.delete('/:id', verificarToken, servicioCtrl.delete);
-
-// RUTA EXTRA: Ver todos los servicios de un prestador específico
-router.get('/prestador/:prestador_id', verificarToken, servicioCtrl.getByPrestador);
+router.get('/', verificarToken, servCtrl.getAll);
+router.post('/', verificarToken, servCtrl.create);
+router.get('/:id', verificarToken, servCtrl.getById);
+router.put('/:id', verificarToken, servCtrl.update);
+router.delete('/:id', verificarToken, servCtrl.delete);
+router.get('/prestador/:prestador_id', verificarToken, servCtrl.getByPrestador);
 
 module.exports = router;

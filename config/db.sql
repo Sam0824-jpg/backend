@@ -70,3 +70,17 @@ INSERT INTO prestadores (usuario_id, categoria_id, telefono, zona_cobertura, ver
 (2, 1, '4491112233', 'Sur Aguascalientes', FALSE),
 (3, 2, '4494445566', 'Jesús María', TRUE),
 (2, 1, '4499998877', 'Todo el estado', TRUE);
+
+INSERT INTO servicios (prestador_id, titulo, precio_base) VALUES
+(1, 'Reparación de fuga de agua visible', 350.00),
+(1, 'Instalación de lavabo o sanitario', 600.00),
+(2, 'Diagnóstico de corto circuito', 250.00),
+(2, 'Instalación de ventilador de techo', 450.00),
+(3, 'Mantenimiento preventivo de plomería general', 800.00);
+
+INSERT INTO resenas (prestador_id, cliente_id, calificacion, comentario) VALUES
+(1, 4, 5, 'Excelente plomero, Juan llegó puntual y arregló la fuga rapidísimo.'),
+(1, 5, 4, 'Buen trabajo y muy amable, aunque tardó un poco en encontrar la falla.'),
+(2, 4, 5, 'María es muy profesional. La instalación eléctrica quedó perfecta y segura.'),
+(2, 5, 5, 'Súper recomendada, resolvió el apagón en mi casa en menos de una hora.'),
+(3, 4, 3, 'El servicio fue aceptable, pero me pareció un poco elevado el costo.');

@@ -10,6 +10,7 @@ app.use(express.json());
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/inicio', require('./routes/inicio'));
 app.use('/api/prestadores', require('./routes/prestadores'));
+app.use('/api/categorias', require('./routes/categorias'));
 app.use('/api/resenas', require('./routes/resenas'));
 app.use('/api/servicios', require('./routes/servicios'));
 app.use('/api/usuarios', require('./routes/usuarios'));

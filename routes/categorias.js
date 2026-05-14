@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const categoriaCtrl = require('../controllers/categoriaController');
+const catCtrl = require('../controllers/categoriaController');
 const verificarToken = require('../middlewares/authMiddleware');
 
-router.get('/', verificarToken, categoriaCtrl.getAll);
-router.get('/:id', verificarToken, categoriaCtrl.getById);
-router.post('/', verificarToken, categoriaCtrl.create);
-router.put('/:id', verificarToken, categoriaCtrl.update);
-router.delete('/:id', verificarToken, categoriaCtrl.delete);
-router.get('/buscar/:nombre', verificarToken, categoriaCtrl.searchByName); // RUTA EXTRA
+router.get('/', verificarToken, catCtrl.getAll);
+router.post('/', verificarToken, catCtrl.create);
+router.get('/:id', verificarToken, catCtrl.getById);
+router.put('/:id', verificarToken, catCtrl.update);
+router.delete('/:id', verificarToken, catCtrl.delete);
+router.get('/buscar/:nombre', verificarToken, catCtrl.buscar);
 
 module.exports = router;
